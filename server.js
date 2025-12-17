@@ -13,8 +13,8 @@ require('dotenv').config({
 const app = express();
 
 // Use environment variables
-const PORT = process.env.PORT
-const MONGODB_URI = process.env.MONGO_URL;
+const PORT = process.env.PORT || 3100;
+const MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost:27017/NutriConnectDB";
 const NODE_ENV = process.env.NODE_ENV ;
 
 // Generate a strong 64-byte hex session secret if not provided in .env
