@@ -114,8 +114,10 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT} in ${NODE_ENV} mode`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT} in ${NODE_ENV} mode`);
+  });
+}
 
 module.exports = app;
